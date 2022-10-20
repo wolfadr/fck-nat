@@ -96,7 +96,7 @@ build {
 
   provisioner "shell" {
     inline = [
-      "sudo yum upgrade"
+      "sudo yum upgrade",
       "sudo yum --nogpgcheck -y localinstall /tmp/fck-nat-${var.version}-any.rpm"
     ]
   }
