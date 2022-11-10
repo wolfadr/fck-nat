@@ -96,7 +96,8 @@ build {
 
   provisioner "shell" {
     inline = [
-      "sudo yum upgrade",
+      "sudo cloud-init status --wait",
+      "sudo yum -y upgrade",
       "sudo yum --nogpgcheck -y localinstall /tmp/fck-nat-${var.version}-any.rpm"
     ]
   }
